@@ -6,8 +6,6 @@
 #   "seaborn",
 #   "matplotlib",
 #   "requests",
-#   "argparse",
-#   "json",
 # ]
 # ///
 
@@ -15,6 +13,8 @@ import os
 import sys
 import pandas as pd
 import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')  # Use a non-interactive backend
 import matplotlib.pyplot as plt
 import requests
 import argparse
@@ -37,7 +37,7 @@ def load_and_describe_data(filename):
         "shape": data.shape,
         "columns": {col: str(dtype) for col, dtype in data.dtypes.items()},
         "missing_values": data.isnull().sum().to_dict(),
-        "summary_statistics": data.describe(include='all', datetime_is_numeric=True).to_dict()
+        "summary_statistics": data.describe(include='all').to_dict()
     }
     return data, description
 
