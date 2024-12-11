@@ -104,7 +104,7 @@ def main():
     args = parser.parse_args()
 
     # Load environment variable for API token
-    token = os.getenv("AIPROXY_TOKEN")
+    token = os.environ["AIPROXY_TOKEN"]
     if not token:
         print("Error: AIPROXY_TOKEN environment variable is not set.")
         sys.exit(1)
