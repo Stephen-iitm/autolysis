@@ -1,58 +1,90 @@
-### Report on Life Satisfaction and Economic Factors Dataset
+# Report on Life Satisfaction Dataset Analysis
 
-#### 1. Dataset Overview
-The dataset comprises 2,363 entries across 11 columns, representing various metrics related to life satisfaction, economic performance, and socio-political factors from 165 countries. The key variables include:
+## 1. Data Overview
 
+The dataset under review comprises 2,363 observations and 11 columns, focusing on various dimensions of life satisfaction across different countries from 2005 to 2023. The dataset includes the following variables:
+
+- **Country name**: Identifier for the country.
+- **Year**: Year of observation.
 - **Life Ladder**: A measure of life satisfaction.
-- **Log GDP per capita**: Economic performance indicator.
-- **Social support**: Supportive networks perceived by individuals.
-- **Healthy life expectancy at birth**: Average life expectancy in good health.
-- **Freedom to make life choices**: Personal liberty in decision-making.
-- **Generosity**: Measures altruism.
-- **Perceptions of corruption**: People's views on corruption levels in their countries.
-- **Positive and Negative affect**: Indicators of emotional states.
+- **Log GDP per capita**: Logarithm of GDP per capita, indicating economic performance.
+- **Social support**: Measure of social support available to citizens.
+- **Healthy life expectancy at birth**: Average number of years a newborn is expected to live in good health.
+- **Freedom to make life choices**: Index reflecting individuals' freedom to make personal decisions.
+- **Generosity**: Measure of charitable giving and social generosity.
+- **Perceptions of corruption**: Citizens' perception of corruption in their countries.
+- **Positive affect**: Measure of positive emotional experiences.
+- **Negative affect**: Measure of negative emotional experiences.
 
-The dataset has a few missing values in several columns, with the most significant gaps in 'Generosity' (81 missing values) and 'Perceptions of corruption' (125 missing values).
+### Missing Values
 
-#### 2. Analysis Conducted
-The analysis included the following key components:
+The dataset contains several missing values across different columns, with notable counts in:
+- **Generosity** (81 missing values)
+- **Perceptions of corruption** (125 missing values)
+- **Healthy life expectancy at birth** (63 missing values)
 
-- **Correlation Analysis**: Evaluated relationships between 'Life Ladder' and other contributing factors to identify potential drivers of life satisfaction.
-- **Missing Values Examination**: Investigated patterns associated with missing values to guide appropriate data treatment techniques.
-- **Trend Analysis Over Years**: Observed changes in key metrics over time to assess overall trends in well-being and economic performance.
-- **Country Comparisons**: Transformed the dataset to assess average contributions to happiness and well-being across different countries.
-- **Visualizations**: Created various plots to aid in interpretation and provide insights visually, including correlation heatmaps, time series graphs, distribution boxplots, and missing value heatmaps.
+This missing data must be addressed during analysis to ensure robustness and accuracy.
 
-#### 3. Insights Discovered
-Among the insights gathered from the analyses:
+## 2. Analysis Conducted
 
-- **Correlation Insights**: Positive correlation was noted between 'Log GDP per capita' and 'Life Ladder', indicating that economic prosperity tends to relate to higher life satisfaction. However, factors like 'Social support' and 'Freedom to make life choices' also presented strong positive correlations with life satisfaction.
+### a. Correlation Analysis
+
+The correlation between "Life Ladder" and other numerical features was analyzed. This step is crucial in identifying attributes that strongly associate with life satisfaction. The correlation matrix was visualized as a heatmap, highlighting relationships between variables.
+
+### b. Trends Over Time 
+
+An exploration of life satisfaction trends over the years was conducted, revealing patterns indicating whether happiness levels have improved or declined.
+
+### c. Country Comparisons
+
+Average life satisfaction was compared across various countries to identify which regions exhibit higher or lower life satisfaction levels.
+
+### d. Economic Factors Impact
+
+The relationship between economic indicators, notably "Log GDP per capita," and life satisfaction was investigated to illustrate economic influences on happiness.
+
+### e. Missing Data Analysis
+
+An assessment of the missing values helped identify potential patterns or biases resulting from missing data, which can affect the analysis outcomes.
+
+### Visualization Code Snippets
+
+Various visualizations were created to support the analysis:
+
+1. **Correlation Matrix Heatmap**: A visual representation of the correlations between variables.
+   ![happiness\correlation_matrix.png](happiness\correlation_matrix.png)
+
+2. **Missing Values Count**: A bar chart displaying the count of missing values per feature.
+   ![happiness\missing_values.png](happiness\missing_values.png)
+
+## 3. Insights Discovered
+
+- **Strongest Correlation**: The analysis uncovered that "Log GDP per capita" and "Social support" exhibited the strongest positive correlations with "Life Ladder," suggesting that economic prosperity and social connections are crucial for life satisfaction.
   
-- **Missing Values Patterns**: A higher frequency of missing values was observed in smaller or less-documented countries, indicating a possible lack of data reporting or collection methods.
-  
-- **Trends Over Time**: Certain countries such as Norway showed consistent increases in the 'Life Ladder', while others like Lebanon presented fluctuations, suggesting socio-political impacts on life satisfaction.
+- **Trends**: Average life satisfaction showed a mild upward trend over the examined years, with some fluctuations. This may denote improvements in certain countries or overall global happiness, despite disparities.
 
-- **Country Comparisons**: Countries with high GDP did not always rank highest in life satisfaction. For instance, some nations demonstrated strong economic indicators without corresponding high scores in 'Life Ladder', highlighting a disconnect.
+- **Regional Differences**: Certain countries consistently scored higher on the "Life Ladder," revealing significant disparities potentially linked to economic development, governance, and social structures.
 
-- **Generosity** consistently ranked low across several countries, suggesting a need for initiatives focusing on community support and interaction.
+- **Generosity and Corruption**: Surprisingly, perceptions of corruption had a noteworthy relationship with life satisfaction. Countries where citizens perceive lower corruption levels generally have higher life satisfaction scores.
 
-#### 4. Implications and Suggestions
-Based on the findings, several implications and suggestions can be made:
+## 4. Implications and Suggestions
 
-- **Policy Focus**: Countries aiming to improve life satisfaction should prioritize enhancing social support systems and personal freedoms, not solely economic growth indicators.
-- **Data Collection**: Countries with significant missing values should improve data collection practices to ensure comprehensive reporting, which is crucial for global comparisons.
-- **Targeted Investment**: Governments should consider investing in mental health initiatives and community programs to boost both 'Generosity' and overall life satisfaction.
-- **Continued Monitoring**: Continuous tracking of these metrics will help identify changes over time and guide future policy decisions for improving citizen well-being.
+### a. Policy Implications
 
----
+The findings suggest that investments in economic growth and fostering social support networks could enhance overall life satisfaction. Policymakers should focus on:
 
-#### Visualizations
-**1. Correlation Matrix**
-![Correlation Matrix](happiness/correlation_matrix.png)
+- Improving economic conditions, specifically targeting GDP per capita growth.
+- Strengthening social welfare systems to enhance social support mechanisms.
+- Reducing corruption through transparency and governance improvements.
 
-**2. Missing Values Heatmap**
-![Missing Values Heatmap](happiness/missing_values.png)
+### b. Future Research Directions
 
---- 
+- Further investigation into qualitative factors influencing life satisfaction.
+- Conducting regression analyses to quantify the impact of various predictors on life satisfaction.
+- Longitudinal studies to assess the long-term effects of socio-economic changes on well-being.
 
-This report summarizes an exploratory analysis of the relationship between life satisfaction and various social, economic, and political factors worldwide. The findings illuminate key areas for potential intervention to enhance human well-being on a global scale. Further investigations may delve deeper into specific countries or additional metrics to enrich understanding and improve quality of life initiatives.
+### c. Addressing Missing Data
+
+Strategies should be developed to handle missing data, such as imputation techniques or conducting sensitivity analyses to understand the impact of missing values on conclusions drawn.
+
+The analysis of this dataset contributes valuable insights into the complex relationships between socio-economic factors and life satisfaction across various global contexts.
