@@ -151,7 +151,7 @@ def main():
     print("Generating README.md...")
     images = f"- Correlation Matrix: {correlation_img}\n- Missing Values Heatmap: {missing_values_img}"
     readme_content = generate_readme(description, analysis_results, images, token)
-    with open(output_dir / "README.md", "w") as f:
+    with open(output_dir / "README.md", "w", encoding="utf-8") as f:
         f.write(readme_content)
 
     print(f"README.md and visualizations created successfully in {output_dir}.")
